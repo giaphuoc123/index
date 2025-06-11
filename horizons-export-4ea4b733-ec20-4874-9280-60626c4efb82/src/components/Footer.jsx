@@ -15,7 +15,7 @@ export const Footer = ({ quote, author, copyright }) => {
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-rose-500 via-pink-500 to-fuchsia-500 mx-auto rounded-full"></div>
             <p className="text-gray-400 dark:text-gray-500">
-              {copyright}
+              {copyright} Design with Love By GiaPhuoc
             </p>
           </div>
         </ScrollAnimationWrapper>
