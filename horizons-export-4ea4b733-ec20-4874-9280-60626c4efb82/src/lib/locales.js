@@ -131,7 +131,7 @@ export const content = {
     footer: {
       quote: "Không có gì quý hơn độc lập tự do",
       author: "Chủ tịch Hồ Chí Minh",
-      copyright: "© 2024 - Website giới thiệu Việt Nam",
+      copyright: "© 2024 - Website ",
     }
   },
   en: {
