@@ -42,7 +42,7 @@ export const CuisineSection = ({ content }) => {
                       <img
                           className="rounded-2xl shadow-2xl w-full h-80 object-cover"
                           alt={content.imageAlt}
-                         src="https://images.unsplash.com/photo-1658000966283-329e511d91c7" />
+                         src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
                   </div>
               </ScrollAnimationWrapper>
