@@ -42,7 +42,7 @@ export const PeopleSection = ({ content }) => {
               <img  
                 className="rounded-2xl shadow-2xl w-full h-80 object-cover"
                 alt={content.imageAlt}
-               src="https://images.unsplash.com/photo-1685503951590-a46e8aec623a" />
+               src="https://media.istockphoto.com/id/862449744/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-vi%E1%BB%87t-nam-b%C3%A1n-d%E1%BB%ABa-tr%C3%AAn-ch%E1%BB%A3-n%E1%BB%95i-%C4%91%E1%BB%93ng-b%E1%BA%B1ng-s%C3%B4ng-c%E1%BB%ADu-long-vi%E1%BB%87t-nam.webp?s=1024x1024&w=is&k=20&c=kSJxfkvsLbQpfcpfYMnqKN7cekL5jMnj0UePbDwwoGM=" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
             </div>
           </ScrollAnimationWrapper>
