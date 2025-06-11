@@ -57,7 +57,7 @@ export const CultureSection = ({ content }) => {
                       <img
                           className="rounded-2xl shadow-2xl w-full h-80 object-cover"
                           alt={content.imageAlt}
-                         src="https://images.unsplash.com/photo-1696253700332-c14926ca3418" />
+                         src="https://images.unsplash.com/photo-1727402528763-af11a02966f0?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
                   </div>
               </ScrollAnimationWrapper>
