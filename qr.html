@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#0d0d0d;color:#fff;overflow-x:hidden}
+    header{padding:20px;text-align:center;font-size:22px;font-weight:600;background:#141414;box-shadow:0 2px 5px #000}
+    nav{display:flex;justify-content:center;gap:40px;padding:20px;background:#1a1a1a}
+    nav a{color:#ccc;text-decoration:none;font-weight:500;position:relative;transition:.3s}
+    nav a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:#00f6ff;transition:.3s}
+    nav a:hover{color:#00f6ff}
+    nav a:hover::after{width:100%}
+    main{display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}
+    .section{width:100%;max-width:900px;background:#1a1a1a;padding:40px;border-radius:20px;box-shadow:0 0 10px #0003;animation:fadeIn .5s ease-out}
+    .section h2{font-size:26px;margin-bottom:20px}
+    .section input,.section textarea,button{width:100%;padding:12px;margin-top:12px;border:none;border-radius:10px;background:#262626;color:#fff;font-size:15px}
+    button{background:#00f6ff;color:#000;font-weight:600;transition:.3s;margin-top:20px}
+    button:hover{background:#00e6ee}
+    #qr img,#cvOutput pre{margin-top:20px;max-width:100%}
+    .profile-card{margin-top:30px;border-radius:16px;padding:30px;background:linear-gradient(145deg,#1b1b1b,#111);display:flex;flex-direction:column;align-items:center;text-align:center;animation:slideUp .6s ease-out}
+    .profile-card .avatar{width:90px;height:90px;border-radius:50%;background:#00f6ff;margin-bottom:15px}
+    .profile-card .name{font-size:18px;font-weight:600;margin-bottom:6px}
+    .profile-card .bio{font-size:14px;color:#aaa}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:600px){.section{padding:25px}.section h2{font-size:20px}}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <header>Toolbox</header>
+  <nav>
+    <a href="qr.html">QR</a>
+    <a href="cv.html">CV</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+  <main>
+    <div class="section" id="qr">
+      <h2>QR Generator</h2>
+      <input type="text" id="qrInput" placeholder="Enter text or URL">
+      <button onclick="generateQR()">Generate</button>
+      <div id="qrResult"></div>
+    </div>
+  </main>
+  <script>
+    function generateQR(){
+      const input=document.getElementById("qrInput").value
+      if(!input)return
+      const qr=new QRious({value:input,size:200})
+      document.getElementById("qrResult").innerHTML=`<img src="${qr.toDataURL()}" alt="QR Code">`
+    }
+  </script>
+</body>
+</html>
