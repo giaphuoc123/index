@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Mẹ Yêu 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f9fafb 100%);
+            color: #374151;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(251, 207, 232, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(254, 242, 248, 0.4) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ec4899, #f472b6, #f8fafc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .date-highlight {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: rgba(251, 207, 232, 0.2);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #be185d;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 1.2rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(236, 72, 153, 0.1);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.2);
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            padding: 5rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #374151;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(236, 72, 153, 0.2);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .photo-card:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        /* Message Section */
+        .message {
+            padding: 5rem 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .message-content {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .message h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #be185d;
+        }
+
+        .message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Interactive Elements */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #f472b6;
+            font-size: 1.5rem;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        /* Interactive Button */
+        .surprise-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .surprise-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(236, 72, 153, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0;
+            }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            50% { 
+                transform: translateY(-100px) rotate(180deg); 
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                top: 20px;
+                right: 20px;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .message-content {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="hearts"></div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="nav-btn" onclick="scrollToSection('hero')" title="Trang chủ">🏠</div>
+        <div class="nav-btn" onclick="scrollToSection('gallery')" title="Ảnh đẹp">📸</div>
+        <div class="nav-btn" onclick="scrollToSection('message')" title="Lời chúc">💌</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Chúc Mừng Sinh Nhật</h1>
+                <p>Mẹ Yêu Của Con</p>
+                <div class="date-highlight">
+                    26 Tháng 6, 2025 ✨
+                </div>
+                <p>Hôm nay là ngày đặc biệt của mẹ, người phụ nữ tuyệt vời nhất trong cuộc đời con. Chúc mẹ sinh nhật vui vẻ và hạnh phúc!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <h2>Những Khoảnh Khắc Đẹp</h2>
+            <div class="photo-grid">
+                <div class="photo-card" onclick="openModal(this)">
+                    <img src="mom.jpg" width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fce7f3'/%3E%3Ctext x='200' y='180' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3EMẹ xinh đẹp%3C/text%3E%3Ctext x='200' y='200' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3Etrong chiếc váy%3C/text%3E%3Ctext x='200' y='220' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3Emàu xanh biển%3C/text%3E%3C/svg%3E" alt="Mẹ trong chiếc váy xanh biển">
+                    <div class="photo-overlay">
+                        
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openModal(this)">
+                    <img src="mom1.jpg" width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f0f9ff'/%3E%3Ctext x='200' y='180' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3EMẹ thanh lịch%3C/text%3E%3Ctext x='200' y='200' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3Ebên bờ biển%3C/text%3E%3Ctext x='200' y='220' text-anchor='middle' font-family='Arial' font-size='16' fill='%23be185d'%3Evới nón rộng vành%3C/text%3E%3C/svg%3E" alt="Mẹ thanh lịch bên bờ biển">
+                    <div class="photo-overlay">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="message section">
+        <div class="container">
+            <div class="message-content">
+                <h2>Lời Chúc Từ Con</h2>
+                <p>Chúc mẹ sinh nhật thật vui vẻ và hạnh phúc! 🎂</p>
+                <p>Mẹ là người phụ nữ tuyệt vời nhất trong cuộc đời con. Những khoảnh khắc bên mẹ luôn là những ký ức đẹp nhất mà con trân trọng.</p>
+                <p>Chúc mẹ luôn khỏe mạnh, xinh đẹp và tràn đầy năng lượng. Con yêu mẹ rất nhiều! 💕</p>
+                <p><strong>Chúc mẹ tuổi mới an khang, thịnh vượng và hạnh phúc bên gia đình!</strong></p>
+                <button class="surprise-btn" onclick="playBirthdaySong()">
+                    <span>🎵</span> Phát nhạc sinh nhật
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+    <audio id="myAudio" src="ChucMungSinhNhat-PhanDinhTung-2804028.mp3"></audio>
+    <script>
+        // Floating hearts animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 3000);
+
+        // Smooth scrolling
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Fireworks effect
+        function createFireworks() {
+            const colors = ['#ec4899', '#f472b6', '#fbbf24', '#10b981', '#3b82f6'];
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.style.position = 'fixed';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight + 'px';
+                    firework.style.width = '20px';
+                    firework.style.height = '20px';
+                    firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.borderRadius = '50%';
+                    firework.style.pointerEvents = 'none';
+                    firework.style.zIndex = '9999';
+                    
+                    document.body.appendChild(firework);
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 200 + 100;
+                    const dx = Math.cos(angle) * velocity;
+                    const dy = Math.sin(angle) * velocity;
+                    
+                    firework.animate([
+                        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                        { transform: `translate(${dx}px, ${dy}px) scale(0)`, opacity: 0 }
+                    ], {
+                        duration: 1000,
+                        easing: 'ease-out'
+                    }).addEventListener('finish', () => {
+                        firework.remove();
+                    });
+                }, i * 100);
+            }
+        }
+
+        // Modal functions
+        function openModal(card) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = card.querySelector('img');
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        
+        // Birthday song (simple notification)
+        function playBirthdaySong() {
+            document.getElementById("myAudio").play();
+            createFireworks();
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Auto-create initial hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 1000);
+        }
+    </script>
+    
+</body>
+</html>
